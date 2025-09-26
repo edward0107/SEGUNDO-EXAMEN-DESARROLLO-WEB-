@@ -1,0 +1,12 @@
+{% extends "cursos/base.html" %}
+
+{% block title %}Nuevo Video{% endblock %}
+
+{% block content %}
+<h2>Agregar un nuevo video</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

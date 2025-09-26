@@ -1,0 +1,15 @@
+{% extends "cursos/base.html" %}
+
+{% block title %}Listado de Usuarios{% endblock %}
+
+{% block content %}
+<h2>Listado de Usuarios</h2>
+<a href="{% url 'usuario_create' %}">Agregar usuario</a>
+<ul>
+    {% for u in usuarios %}
+        <li><strong>{{ u.nombre }}</strong> — {{ u.email }}</li>
+    {% empty %}
+        <li>No hay usuarios registrados</li>
+    {% endfor %}
+</ul>
+{% endblock %}

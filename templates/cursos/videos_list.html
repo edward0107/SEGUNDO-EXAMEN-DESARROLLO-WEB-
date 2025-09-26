@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Videos{% endblock %}
+{% block content %}
+<h2>Listado de Videos</h2>
+<a href="{% url 'video_create' %}">Agregar video</a>
+<ul>
+    {% for v in videos %}
+        <li>{{ v.titulo }} - {{ v.creador }}</li>
+    {% empty %}
+        <li>No hay videos disponibles</li>
+    {% endfor %}
+</ul>
+{% endblock %}
